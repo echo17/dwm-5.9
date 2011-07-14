@@ -2,12 +2,12 @@
 
 /* appearance */
 static const char font[]            = "-*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*";
-static const char normbordercolor[] = "#cccccc";
-static const char normbgcolor[]     = "#cccccc";
-static const char normfgcolor[]     = "#000000";
-static const char selbordercolor[]  = "#0066ff";
-static const char selbgcolor[]      = "#0066ff";
-static const char selfgcolor[]      = "#ffffff";
+static const char normbordercolor[] = "#34a0d8";
+static const char normbgcolor[]     = "#2a2a2a";
+static const char normfgcolor[]     = "#888888";
+static const char selbordercolor[]  = "#34a0d8";
+static const char selbgcolor[]      = "#777777";
+static const char selfgcolor[]      = "#4b4b4b";
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const Bool showbar           = True;     /* False means no bar */
@@ -18,13 +18,18 @@ static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            True,        -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       False,       -1 },
+        { "Gimp",     NULL,       NULL,       0,            True,        -1 },
+        { "Pidgin",   NULL,       NULL,       0,            True,        -1 },
+        { "Eclipse",  NULL,       NULL,       0,            True,        -1 },
+        { "MonoDevelop", NULL,    NULL,       0,            True,        -1 },
+        { "Transmission", NULL,   NULL,       0,            True,        -1 },
+        { "Wicd",     NULL,       NULL,       0,            True,        -1 },
+        { "minecraft", NULL,      NULL,       0,            True,        -1 },
 };
 
 /* layout(s) */
 static const float mfact      = 0.55; /* factor of master area size [0.05..0.95] */
-static const Bool resizehints = True; /* True means respect size hints in tiled resizals */
+static const Bool resizehints = False; /* True means respect size hints in tiled resizals */
 
 #include "bstack.c"
 #include "bstackhoriz.c"
@@ -53,7 +58,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
-static const char *termcmd[]  = { "uxterm", NULL };
+static const char *termcmd[]  = { "sakura", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
